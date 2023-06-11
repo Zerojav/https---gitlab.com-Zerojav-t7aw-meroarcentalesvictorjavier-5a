@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Acerca de</title>
+</head>
+<body>
+    <div class="nav-bar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="acercade.html">Acerca de</a></li>
+                <li>
+                    <a href="#" id="btn-opciones" onclick="mostrarOpciones()">Opciones ▼</a>
+                    <div class="opciones">
+                        <ul>
+                            <fieldset id="opcionesfieldset">
+                                <li><a href="confp.html">Editar perfil</a></li>
+                                <li><a href="ayuda.html">Ayuda</a></li>
+                                <li><a href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
+                            </fieldset>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="universidad">
+        <fieldset id="ufieldset">
+            <img src="resources/logo.png" alt="logo-uleam">
+        </fieldset>
+    </div>
+    <div class="acercade"> <!-- Fieldset con mision, vision y quienes somos -->
+        <fieldset id="fieldsetad1">
+            <h1>Misión</h1>
+            <p>Formar profesionales competentes y emprendedores desde lo académico, 
+                la investigación, y la vinculación, que contribuyan a 
+                mejorar la calidad de vida de la sociedad.</p>
+        </fieldset>
+        <fieldset id="fieldsetad2">
+            <h1>Visión</h1>
+            <p>Ser un referente nacional e internacional de Institución de Educación Superior
+                 que contribuye al desarrollo social, cultural y productivo con profesionales éticos, 
+                 creativos, cualificados y con sentido de pertinencia.</p>
+        </fieldset>
+        <fieldset id="fieldsetad3">
+            <h1>¿Quienes somos?</h1>
+            <p>Somos una universidad de carácter humanista, con una clara concepción laica en materia 
+                educativa que procura la más exigente libertad de enseñanza y cátedra, entendiendo al 
+                estudiante como el gran actor de su proceso de formación y al docente como el gran 
+                facilitador del futuro profesional.</p>
+        </fieldset>
+    </div>
+    <script type="text/javascript">
+        if (!localStorage.getItem("sesionIniciada") || localStorage.getItem("sesionIniciada") !== "true") {
+        // Si el usuario no ha iniciado sesión correctamente, redirige a "login.html"
+        window.location.href = "login.html";
+        }
+
+        function cerrarSesion() {
+            // Elimina el item "sesionIniciada" del LocalStorage
+            localStorage.removeItem("sesionIniciada");
+            // Redirecciona a la página de inicio de sesión
+            window.location.href = "login.html";
+        }
+        function mostrarOpciones() {
+        var opciones = document.querySelector('.opciones');
+        opciones.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

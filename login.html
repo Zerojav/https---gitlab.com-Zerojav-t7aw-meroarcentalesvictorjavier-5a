@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="login">
+        <form action="index.html" method="post" onsubmit="return verificar()"> 
+          <fieldset>
+            <h1>Sistema de Registro de Asistencias (Docentes)</h1>
+            <h2>Iniciar sesión</h2>
+            <label for="usuario">Usuario:</label>
+            <input type="text" id="usuario" name="usuario" placeholder="Ingrese el usuario aquí"><br><br>
+            <label for="contraseña">Contraseña:</label>
+            <input type="password" id="contraseña" name="contraseña" placeholder="Ingrese la contraseña aquí"><br><br>
+            <input type="submit" value="Iniciar sesión" id="iniciar"><br><br>
+            <a href="contraolv.html" id="contraolv">¿Olvidaste tu contraseña?</a>
+          </fieldset>
+        </form>
+      </div>
+      <script type="text/javascript">
+        function verificar() {
+          // Obtiene los valores de usuario y contraseña
+          var usuario = document.getElementById("usuario").value;
+          var contraseña = document.getElementById("contraseña").value;
+          
+          // Verifica si el usuario y la contraseña son correctos
+          if ((usuario == "admin" && contraseña == "admin") || (usuario == "Javier" && contraseña == "1234")) {
+            // Después de verificar los datos del usuario y antes de redirigir a "index.html"
+            localStorage.setItem("sesionIniciada", "true");
+            // Redirecciona a la página principal
+            return true;
+          } else {
+            // Muestra un mensaje de error
+            alert("Usuario o contraseña incorrectos.");
+            // Previene que se envíe el formulario
+            return false;
+          }
+        }
+      </script>
+</body>
+</html>

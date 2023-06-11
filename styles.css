@@ -1,0 +1,490 @@
+body { /* Se configura el background */
+    background-color: rgb(212, 239, 245);
+    margin-top: 0;
+    margin-bottom: 0;
+    background-image: url(resources/estudiantes.png);
+}
+
+
+/* Inicio de la configuracion de estilos de la interfaz del login */
+
+.login fieldset{ 
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 1000px;
+    height: 500px;
+    text-align: center;
+    background: rgb(117, 140, 185);
+    border: none;
+    border-radius: 20px;
+}
+
+.login h1, h2, label{
+    color: #000000;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.login h1{
+    margin-top: 120px;
+    font-size: 45px;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #2a2a2a;
+    text-align: center;
+}
+
+.login h2{
+    font-size: 40px;
+    -webkit-text-stroke-width: 0.65px;
+    -webkit-text-stroke-color: #2a2a2a;
+    text-align: center;
+}
+
+.login label{
+    width: 100px;
+    display: inline-block;
+}
+
+.login #iniciar{
+    background-color: rgb(49, 95, 247);
+    padding: 10px 20px;
+    margin-left: 70px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    border-radius: 10px;
+    border-color: rgb(49, 95, 247);
+}
+
+.login input{
+    border-radius: 100px;
+    text-align: center;
+    padding: 3px 15px;
+    background-color: rgb(214, 219, 239);
+}
+
+.login #contraolv{
+    margin-left: 70px;
+    font-weight: bold;
+    color: white;
+} 
+
+/* Fin de la configuracion de la interfaz de login */
+
+/* Inicio de la configuracion del navbar y del fieldset superior donde va la imagen de la universidad */
+
+.nav-bar{
+    background-color: rgb(33, 93, 222);
+    border: none;
+    z-index: 1;
+    position: relative;
+    border-radius: 2px;
+}
+
+.nav-bar nav{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav-bar ul{
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+}
+
+.nav-bar ul li{
+    margin: 0 10px;
+}
+
+.nav-bar ul li a{
+    color: #000;
+    text-decoration: 0;
+}
+
+.nav-bar ul li a:hover{
+    color: #fff;
+    background-color: #000;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Dentro del navbar estaran estas opciones para una mejor navegación */
+.opciones{
+    display: none;
+    position: absolute;
+    z-index: 1;
+  }
+
+.opciones.show {
+    display: block;
+}
+
+.opciones ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.opciones ul li a{
+    margin-top: 5px;
+    color:#fff;
+}
+
+.opciones #opcionesfieldset{
+    background-color: #000;
+}
+
+.universidad{
+    position: relative;
+    z-index: 0;
+}
+.universidad #ufieldset{
+    margin: 0 auto;
+    margin-top: 0;
+    text-align: left;
+    background: rgb(154, 212, 241);
+    padding: 0;
+    border: none;
+    border-radius: 3px;
+}
+
+.universidad img{
+    width: 300px;
+    height: auto;
+    vertical-align: middle;
+    margin-left: 20px;
+}
+
+.universidad h1{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+/* FIN */
+
+.contenido{
+    margin-top: 120px;
+    margin-left: 600px;
+}
+.contenido button{
+    border-color: rgb(154, 212, 241);
+    background-color: rgb(154, 212, 241);
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 30px 55px;
+    color: #000000;
+    font-weight: bold;
+    width: 300px;
+    font-size: 20px;
+}
+
+.back fieldset{
+    background: rgb(154, 212, 241);
+    width: 100%;
+    border: none;
+    margin-left: -8px;
+}
+
+.back button{
+    border-radius: 100%;
+}
+
+.contraolv fieldset{
+    text-align: center;
+    margin-top: 50px;
+    background-color: rgb(135, 158, 241) ;
+    border-radius: 10px;
+    border-color: rgb(135, 158, 241);
+    width: 500px;
+    margin-left: 500px;
+}
+
+.contraolv{
+    border-radius: 20px;
+}
+
+.contraolv #Enviar{
+    border-radius: 10px;
+    padding: 3px 15px;
+    background-color: rgb(214, 219, 239);
+}
+
+.contraolv input{
+    border-radius: 5px;
+}
+
+.asistencias{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.asistencias select{
+    margin-right: 60px;
+    border-radius: 5px;
+    padding: 3px 8px;
+}
+
+.asistencias button{
+    background-color: rgb(49, 95, 247);
+    padding: 10px 20px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    border-radius: 10px;
+    border-color: rgb(49, 95, 247);
+}
+
+.tabla{
+    margin-top: 30px;
+}
+
+.tabla table{
+    margin: 0 auto;
+    width: 1000px;
+    height: 100%;
+    border-collapse: collapse;
+    background-color: hsl(209, 100%, 80%);
+    border-radius: 30px;
+}
+
+.tabla caption{
+    color: rgb(2, 2, 2);
+    font-weight: bold;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.tabla-asistencia{
+    text-align: center;
+}
+
+.tabla th,td{
+    border: none;
+    padding: 8px;
+    text-align: center;
+}
+
+.tabla-asistencia .oculto {
+    display: none;
+}
+
+.registrodoc fieldset{ 
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 1000px;
+    height: 334px;
+    text-align: justify;
+    background: rgb(117, 140, 185);
+    border: none;
+    border-radius: 20px;
+}
+
+.registrodoc h1, h2, label{
+    color: #000000;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.registrodoc h1{
+    text-align: center;
+    font-size: 45px;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #2a2a2a;
+}
+
+.registrodoc label{
+    margin-left: 75px;
+    width: 100px;
+    display: inline-block;
+}
+
+.registrodoc #Enviar{
+    background-color: rgb(49, 95, 247);
+    padding: 10px 20px;
+    margin-left: 450px;
+    margin-top: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    border-radius: 10px;
+    border-color: rgb(49, 95, 247);
+}
+
+.registrodoc input{
+    border-radius: 100px;
+    text-align: center;
+    padding: 3px 20px;
+    background-color: rgb(214, 219, 239);
+}
+
+.ayuda fieldset{ 
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 700px;
+    height: 450px;
+    text-align: justify;
+    background: rgb(117, 140, 185);
+    border: none;
+    border-radius: 20px;
+}
+
+.ayuda h1, label{
+    color: #000000;
+    font-weight: 600;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.ayuda h1{
+    text-align: center;
+    font-size: 45px;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #2a2a2a;
+}
+
+.ayuda label{
+    margin-left: 75px;
+    width: 100px;
+    display: inline-block;
+}
+
+.ayuda #Enviar{
+    background-color: rgb(49, 95, 247);
+    padding: 10px 20px;
+    margin-left: 450px;
+    margin-top: 20px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    border-radius: 10px;
+    border-color: rgb(49, 95, 247);
+}
+
+.ayuda input{
+    border-radius: 100px;
+    text-align: center;
+    padding: 3px 100px;
+    background-color: rgb(214, 219, 239);
+}
+
+.ayuda textarea{
+    border-radius: 14px;
+    text-align: center;
+    background-color: rgb(214, 219, 239);
+    border-color: #000;
+}
+
+.acercade {
+    margin-top: 20px;
+}
+
+.acercade fieldset{
+    margin-top: 20px;
+    width: 500px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.acercade p{
+    font-size: 18px;
+}
+
+.acercade #fieldsetad1{
+    border: none;
+    background-color: rgb(117, 140, 185);
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+.acercade #fieldsetad2{
+    border: none;
+    background-color: rgb(117, 140, 185);
+    border-radius: 10px;
+    margin-left: 500px;
+}
+
+.acercade #fieldsetad3{
+    border: none;
+    background-color: rgb(117, 140, 185);
+    border-radius: 10px;
+    margin-left: 500px;
+}
+
+.Perfil fieldset{
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 800px;
+    height: 300px;
+    background: rgb(117, 140, 185);
+    border: none;
+    border-radius: 20px;
+}
+
+.Perfil p{
+    font-size: 23px;
+    color: #000000;
+    -webkit-text-stroke-width: 0.05px;
+    -webkit-text-stroke-color: #ffffff;
+}
+
+.Perfil img{
+    margin-top: 20px;
+    margin-left: 20px;
+    width: 100px;
+    height: auto;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+
+.Perfil .izqimg{
+    margin-top: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 80px;
+}
+
+.Perfil .izqimg2{
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 40px;
+}
+
+
+.Perfil #fotodeperfil{
+    color: #000000;
+    -webkit-text-stroke-width: 0.05px;
+    -webkit-text-stroke-color: #ffffff;
+    margin-top: -30px;
+    margin-left: 12px;
+}
+
+.Perfilconf fieldset{
+    margin: 0 auto;
+    margin-top: 100px;
+    width: 400px;
+    height: 200px;
+    background: rgb(117, 140, 185);
+    border: none;
+    border-radius: 20px;
+}
+.Perfilconf img{
+    margin-top: 40px;
+    margin-left: 20px;
+    width: 100px;
+    height: auto;
+    display: relative;
+    vertical-align: middle;
+}
+
+.Perfilconf button{
+    background-color: rgb(49, 95, 247);
+    padding: 10px 20px;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-bottom: 50px;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;
+    border-radius: 10px;
+    border-color: rgb(49, 95, 247);
+}
