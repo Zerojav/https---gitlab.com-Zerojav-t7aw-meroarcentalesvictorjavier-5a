@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Registro Docentes</title>
+</head>
+<body>
+    <div class="nav-bar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="acercade.html">Acerca de</a></li>
+                <li>
+                    <a href="#" id="btn-opciones" onclick="mostrarOpciones()">Opciones ▼</a>
+                    <div class="opciones">
+                        <ul>
+                            <fieldset id="opcionesfieldset">
+                                <li><a href="confp.html">Editar perfil</a></li>
+                                <li><a href="ayuda.html">Ayuda</a></li>
+                                <li><a href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
+                            </fieldset>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="universidad">
+        <fieldset id="ufieldset">
+            <img src="resources/logo.png" alt="logo-uleam">
+        </fieldset>
+    </div>
+    <div class="registrodoc">
+        <form method="post"> 
+            <fieldset>
+              <h1>Registro de Horarios (Docentes)</h1>
+              <label for="Nombre">Nombre:</label>
+              <input type="text" id="pnombre" name="pnombre" placeholder="Ingrese aquí el nombre">
+              <label for="Facultad">Facultad:</label>
+              <input type="text" id="facultad" name="facultad" placeholder="Ingrese la facultad aquí"><br><br>
+              <label for="Correo">Correo:</label>
+              <input type="text" id="correo" name="correo" placeholder="Ingrese aquí el correo">
+              <label for="Telefono">Telefono:</label>
+              <input type="text" id="telefono" name="telefono" placeholder="Ingrese el telefono aquí"><br><br>
+              <label for="Asignatura">Asignatura:</label>
+              <input type="text" id="asignatura" name="asignatura" placeholder="Ingrese aquí la asignatura">
+              <label for="Horaentrada">Horario de Entrada:</label>
+              <input type="time" id="horaentrada" name="horaentrada" placeholder="Ingrese la hora de entrada aquí">
+              <label for="horasalida">Horario de Fin:</label>
+              <input type="time" id="horasalida" name="horasalida" placeholder="Ingrese la hora de salida aquí"><br><br>
+              <input type="submit" value="Enviar" id="Enviar" onclick="registrodoc()">
+            </fieldset>
+          </form>
+    </div>
+    <script type="text/javascript">
+        if (!localStorage.getItem("sesionIniciada") || localStorage.getItem("sesionIniciada") !== "true") {
+        // Si el usuario no ha iniciado sesión correctamente, redirige a "login.html"
+        window.location.href = "login.html";
+        }
+
+        function cerrarSesion() {
+            // Elimina el item "sesionIniciada" del LocalStorage
+            localStorage.removeItem("sesionIniciada");
+            // Redirecciona a la página de inicio de sesión
+            window.location.href = "login.html";
+        }
+        function mostrarOpciones() {
+        var opciones = document.querySelector('.opciones');
+        opciones.classList.toggle('show');
+        }
+        function registrodoc() {
+            // Se obtiene los datos ingresados en los inputs
+            var pnombre = document.getElementById("pnombre").value;
+            var facultad = document.getElementById("facultad").value;
+            var correo = document.getElementById("correo").value;
+            var telefono = document.getElementById("telefono").value;
+            var asignatura = document.getElementById("asignatura").value;
+            var horaentrada = document.getElementById("horaentrada").value;
+            var horasalida = document.getElementById("horasalida").value;
+            
+             // Se verifica que todos los campos requeridos estén completos
+             if (pnombre == "" || facultad == "" || correo == "" || telefono == "" || asignatura == "" || horaentrada == "" || horasalida == "") {
+                alert("Por favor complete todos los campos requeridos.");}
+                else{
+                    alert("Datos enviados")
+                    location.reload();
+                }            
+        }
+    </script>
+</body>
+</html>

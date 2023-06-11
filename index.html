@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto</title>
+</head>
+<body>
+    <div class="nav-bar">
+        <nav>
+            <ul> <!-- Redireccion del navbar -->
+                <li><a href="index.html">Inicio</a></li> 
+                <li><a href="acercade.html">Acerca de</a></li>
+                <li>
+                    <a href="#" id="btn-opciones" onclick="mostrarOpciones()">Opciones ▼</a>
+                    <div class="opciones"> <!-- Redireccion del menu de opciones -->
+                        <ul>
+                            <fieldset id="opcionesfieldset">
+                                <li><a href="confp.html">Editar perfil</a></li>
+                                <li><a href="ayuda.html">Ayuda</a></li>
+                                <li><a href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
+                            </fieldset>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="universidad">
+        <fieldset id="ufieldset">
+            <img src="resources/logo.png" alt="logo-uleam">
+        </fieldset>
+    </div>
+    <div class="contenido"> <!-- Redirecciones de los botones principales -->
+            <button onclick="window.location.href = 'perfil.html';">Ver Perfil</button><br><br>
+            <button onclick="window.location.href = 'asistencia.html';">Control de Asistencias</button><br><br>
+            <button onclick="window.location.href = 'registrodoc.html'">Registro de Docentes</button>
+    </div>
+    
+    <script type="text/javascript">
+        // Verifica si el usuario ha iniciado sesión correctamente
+        if (!localStorage.getItem("sesionIniciada") || localStorage.getItem("sesionIniciada") !== "true") {
+        // Si el usuario no ha iniciado sesión correctamente, redirige a "login.html"
+        window.location.href = "login.html";
+        }
+
+        function cerrarSesion() {
+            // Elimina el item "sesionIniciada" del LocalStorage
+            localStorage.removeItem("sesionIniciada");
+            // Redirecciona a la página de inicio de sesión
+            window.location.href = "login.html";
+        }
+        function mostrarOpciones() {
+        var opciones = document.querySelector('.opciones');
+        opciones.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

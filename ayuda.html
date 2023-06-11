@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Ayuda</title>
+</head>
+<body>
+    <div class="nav-bar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="acercade.html">Acerca de</a></li>
+                <li>
+                    <a href="#" id="btn-opciones" onclick="mostrarOpciones()">Opciones ▼</a>
+                    <div class="opciones">
+                        <ul>
+                            <fieldset id="opcionesfieldset">
+                                <li><a href="confp.html">Editar perfil</a></li>
+                                <li><a href="ayuda.html">Ayuda</a></li>
+                                <li><a href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
+                            </fieldset>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="universidad">
+        <fieldset id="ufieldset">
+            <img src="resources/logo.png" alt="logo-uleam">
+        </fieldset>
+    </div>
+    <div class="ayuda">
+        <form method="post"> 
+            <fieldset>
+              <h1>Contacta con nosotros</h1> <!-- Formulario para la pestaña de ayuda -->
+              <label for="Nombre">Nombre:</label>
+              <input type="text" id="pnombre" name="pnombre" placeholder="Ingrese aquí el nombre"><br><br>
+              <label for="Correo">Correo:</label>
+              <input type="text" id="correo" name="correo" placeholder="Ingrese aquí el correo"><br><br>
+              <label for="Telefono">Telefono:</label>
+              <input type="text" id="telefono" name="telefono" placeholder="Ingrese el telefono aquí"><br><br>
+              <label for="Comentarios">Comentarios:</label>
+              <textarea id="comentario" name="comentario" rows="4" cols="50" placeholder="Ingrese aquí un comentario (Opcional)"></textarea><br><br>
+              <input type="submit" value="Enviar" id="Enviar" onclick="envioformulario()">
+            </fieldset>
+          </form>
+    </div>
+    <script type="text/javascript">
+        if (!localStorage.getItem("sesionIniciada") || localStorage.getItem("sesionIniciada") !== "true") {
+        // Si el usuario no ha iniciado sesión correctamente, redirige a "login.html"
+        window.location.href = "login.html";
+        }
+
+        function cerrarSesion() {
+            // Elimina el item "sesionIniciada" del LocalStorage
+            localStorage.removeItem("sesionIniciada");
+            // Redirecciona a la página de inicio de sesión
+            window.location.href = "login.html";
+        }
+        function mostrarOpciones() {
+        var opciones = document.querySelector('.opciones');
+        opciones.classList.toggle('show');
+        }
+        function envioformulario() {
+            
+            var pnombre = document.getElementById("pnombre").value;
+            var correo = document.getElementById("correo").value;
+            var telefono = document.getElementById("telefono").value;
+            var comentario = document.getElementById("comentario").value;
+             // Se verifica que todos los campos requeridos estén completos
+             
+             if (pnombre == "" || correo == "" || telefono == "") {
+                alert("Por favor complete todos los campos requeridos.");}
+                else{
+                    alert("Solicitud enviados")
+                    location.reload();
+                }   
+        }
+    </script>
+</body>
+</html>

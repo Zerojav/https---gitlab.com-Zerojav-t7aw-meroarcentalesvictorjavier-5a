@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Olvidaste tu contraseña</title>
+</head>
+<body>
+    <div class="back">
+        <fieldset>
+            <button onclick="window.location.href = 'login.html';">←</button>
+        </fieldset>
+    </div>
+    <div class="contraolv">
+        <form method="post"> <!-- Formulario para la peticion de contraseña olvidada -->
+            <fieldset>
+              <h2>Ingrese su correo</h2>
+              <label for="email">E-mail</label>
+              <input type="text" name="email" placeholder="Ingrese el correo aquí"><br><br>
+              <input type="submit" value="Enviar" id="Enviar" onclick="contraolv()"><br><br>
+            </fieldset>
+          </form>
+    </div>
+    <script type="text/javascript">
+        function contraolv() {
+            alert("Peticion enviada, revise su correo");
+        }
+    </script>
+</body>
+</html>

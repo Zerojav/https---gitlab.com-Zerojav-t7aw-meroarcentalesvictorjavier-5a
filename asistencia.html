@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Control de asistencia</title>
+</head>
+<body>
+    <div class="nav-bar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="acercade.html">Acerca de</a></li>
+                <li>
+                    <a href="#" id="btn-opciones" onclick="mostrarOpciones()">Opciones ▼</a>
+                    <div class="opciones">
+                        <ul>
+                            <fieldset id="opcionesfieldset">
+                                <li><a href="confp.html">Editar perfil</a></li>
+                                <li><a href="ayuda.html">Ayuda</a></li>
+                                <li><a href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
+                            </fieldset>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="universidad">
+        <fieldset id="ufieldset">
+            <img src="resources/logo.png" alt="logo-uleam">
+        </fieldset>
+    </div>
+    <div class = "asistencias" >
+        <div class="seleccion-opciones"> <!-- Seleccion del filtro -->
+            <label for="facultad">Seleccionar Facultad</label>
+            <select name="facultad" id="facultad" class="filtro">
+                <option value="">Selecciona una opción por favor</option>
+                <option value="FACCI">FACCI</option>
+                <option value="Arquitectura">Arquitectura</option>
+                <option value="Economia">Economia</option>
+            </select>
+            <label for="asignatura">Seleccionar Asignatura</label>
+            <select name="asignatura" id="asignatura" class="filtro">
+                <option value="">Seleccione una opción por favor</option>
+            </select>
+            <label for="profesor">Seleccionar Profesor</label>
+            <select name="profesor" id="profesor" class="filtro">
+                <option value="">Seleccione una opción por favor</option>
+            </select>
+        </div>
+        <div class="tabla"> <!-- Contenido de la tabla -->
+            <table id="tabla-asistencia"> <!-- Indica que la tabla tiene una id para referenciarla es JS-->
+                <caption>Asistencia docentes</caption>
+                <tr> <!-- Columnas de la tabla -->
+                    <th>Nombre</th>
+                    <th>Facultad</th>
+                    <th>Asignatura</th>
+                    <th>Correo</th>
+                    <th>Teléfono</th>
+                    <th>Hora de entrada y salida</th>
+                    <th>Asistencia</th>
+                </tr>
+                <!-- Datos de la tabla-->
+                <tr>
+                    <td class="profesor">Profesor1</td>
+                    <td class="facultad">FACCI</td>
+                    <td class="asignatura">Analisis de bases de datos</td>
+                    <td>profesor1@uleam.com</td>
+                    <td>099999</td>
+                    <td>08:00 - 10:00</td>
+                    <td><input type="checkbox" name="asistencia" id="asistencia" value="aceptado"></td>
+                </tr>
+                <tr>
+                    <td class="profesor">Profesor2</td>
+                    <td class="facultad">FACCI</td>
+                    <td class="asignatura">Analisis de bases de datos</td>
+                    <td>profesor2@uleam.com</td>
+                    <td>099999</td>
+                    <td>10:00 - 12:00</td>
+                    <td><input type="checkbox" name="asistencia" id="asistencia" value="aceptado"></td>
+                </tr>
+                <tr>
+                    <td class="profesor">Profesor3</td>
+                    <td class="facultad">FACCI</td>
+                    <td class="asignatura">Metodos Numericos</td>
+                    <td>profesor3@uleam.com</td>
+                    <td>099999</td>
+                    <td>08:00 - 10:00</td>
+                    <td><input type="checkbox" name="asistencia" id="asistencia" value="aceptado"></td>
+                </tr>
+                <tr>
+                    <td class="profesor">Profesor4</td>
+                    <td class="facultad">FACCI</td>
+                    <td class="asignatura">Metodos Numericos</td>
+                    <td>profesor4@uleam.com</td>
+                    <td>099999</td>
+                    <td>08:00 - 10:00</td>
+                    <td><input type="checkbox" name="asistencia" id="asistencia" value="aceptado"></td>
+                </tr>
+                <tr>
+                    <td class="profesor">Profesor5</td>
+                    <td class="facultad">FACCI</td>
+                    <td class="asignatura">Aplicaciones web</td>
+                    <td>profesor5@uleam.com</td>
+                    <td>099999</td>
+                    <td>13:00 - 15:00</td>
+                    <td><input type="checkbox" name="asistencia" id="asistencia" value="aceptado"></td>
+                </tr>
+                <tr>
+                    <td class="profesor">Profesor6</td>
+                    <td class="facultad">FACCI</td>
+                    <td class="asignatura">Aplicaciones web</td>
+                    <td>profesor6@uleam.com</td>
+                    <td>099999</td>
+                    <td>08:00 - 10:00</td>
+                    <td><input type="checkbox" name="asistencia" id="asistencia" value="aceptado"></td>
+                </tr>
+                <tr>
+                    <td class="profesor">Profesor7</td>
+                    <td class="facultad">Arquitectura</td>
+                    <td class="asignatura">Analisis y proyectos</td>
+                    <td>profesor7@uleam.com</td>
+                    <td>099999</td>
+                    <td>15:00 - 17:00</td>
+                    <td><input type="checkbox" name="asistencia" id="asistencia" value="aceptado"></td>
+                </tr>
+                <tr>
+                    <td class="profesor">Profesor8</td>
+                    <td class="facultad">Arquitectura</td>
+                    <td class="asignatura">Analisis y proyectos</td>
+                    <td>profesor8@uleam.com</td>
+                    <td>099999</td>
+                    <td>10:00 - 12:00</td>
+                    <td><input type="checkbox" name="asistencia" id="asistencia" value="aceptado"></td>
+                </tr>
+                <tr>
+                    <td class="profesor">Profesor9</td>
+                    <td class="facultad">Arquitectura</td>
+                    <td class="asignatura">Graficadores digitales</td>
+                    <td>profesor9@uleam.com</td>
+                    <td>099999</td>
+                    <td>13:00 - 15:00</td>
+                    <td><input type="checkbox" name="asistencia" id="asistencia" value="aceptado"></td>
+                </tr>
+                <tr>
+                    <td class="profesor">Profesor10</td>
+                    <td class="facultad">Arquitectura</td>
+                    <td class="asignatura">Graficadores digitales</td>
+                    <td>profesor10@uleam.com</td>
+                    <td>099999</td>
+                    <td>15:00 - 17:00</td>
+                    <td><input type="checkbox" name="asistencia" id="asistencia" value="aceptado"></td>
+                </tr>
+                <tr>
+                    <td class="profesor">Profesor11</td>
+                    <td class="facultad">Economia</td>
+                    <td class="asignatura">Macroeconomia</td>
+                    <td>profesor11@uleam.com</td>
+                    <td>099999</td>
+                    <td>08:00 - 10:00</td>
+                    <td><input type="checkbox" name="asistencia" id="asistencia" value="aceptado"></td>
+                </tr>
+                <tr>
+                    <td class="profesor">Profesor12</td>
+                    <td class="facultad">Economia</td>
+                    <td class="asignatura">Macroeconomia</td>
+                    <td>profesor12@uleam.com</td>
+                    <td>099999</td>
+                    <td>15:00 - 17:00</td>
+                    <td><input type="checkbox" name="asistencia" id="asistencia" value="aceptado"></td>
+                </tr>
+                <tr>
+                    <td class="profesor">Profesor13</td>
+                    <td class="facultad">Economia</td>
+                    <td class="asignatura">Comercio Exterior</td>
+                    <td>profesor13@uleam.com</td>
+                    <td>099999</td>
+                    <td>10:00 - 12:00</td>
+                    <td><input type="checkbox" name="asistencia" id="asistencia" value="aceptado"></td>
+                </tr>
+                <tr>
+                    <td class="profesor">Profesor14</td>
+                    <td class="facultad">Economia</td>
+                    <td class="asignatura">Comercio Exterior</td>
+                    <td>profesor14@uleam.com</td>
+                    <td>099999</td>
+                    <td>13:00 - 15:00</td>
+                    <td><input type="checkbox" name="asistencia" id="asistencia" value="aceptado"></td>
+                </tr>
+            </table>
+            <button onclick="mensaje()">Enviar</button>
+        </div>
+    </div>
+    <script type="text/javascript">
+        // Verifica si el usuario ha iniciado sesión correctamente
+        if (!localStorage.getItem("sesionIniciada") || localStorage.getItem("sesionIniciada") !== "true") {
+        // Si el usuario no ha iniciado sesión correctamente, redirige a "login.html"
+        window.location.href = "login.html";
+        }
+
+        function cerrarSesion() {
+            // Elimina el item "sesionIniciada" del LocalStorage
+            localStorage.removeItem("sesionIniciada");
+            // Redirecciona a la página de inicio de sesión
+            window.location.href = "login.html";
+        }
+
+
+        function mostrarOpciones() { // Funcion para las opciones de filtrado
+        var opciones = document.querySelector('.opciones');
+        opciones.classList.toggle('show');
+        }
+        const facultad = document.getElementById("facultad");
+        const asignatura = document.getElementById("asignatura");
+        const profesor = document.getElementById("profesor")
+
+        facultad.addEventListener("change", function() {
+        if (facultad.value === "FACCI") {
+            asignatura.innerHTML = `
+            <option value="">Seleccione una opción por favor</option>
+            <option value="Analisis de bases de datos">Analisis de bases de datos</option>
+            <option value="Metodos Numericos">Metodos Numericos</option>
+            <option value="Aplicaciones web">Aplicaciones web</option>
+            `;
+            asignatura.addEventListener("change", function() {
+            if (asignatura.value === "Analisis de bases de datos") {
+                profesor.innerHTML = `
+                <option value="">Seleccione una opción por favor</option>
+                <option value="Profesor1">Profesor1</option>
+                <option value="Profesor2">Profesor2</option>
+                `;
+            } else if (asignatura.value === "Metodos Numericos") {
+                profesor.innerHTML = `
+                <option value="">Seleccione una opción por favor</option>
+                <option value="Profesor3">Profesor3</option>
+                <option value="Profesor4">Profesor4</option>
+                `;
+            } else if(asignatura.value === "Aplicaciones web") {
+                profesor.innerHTML = `
+                <option value="">Seleccione una opción por favor</option>
+                <option value="Profesor5">Profesor5</option>
+                <option value="Profesor6">Profesor6</option>
+                `;
+            } else {
+                profesor.innerHTML = `
+                <option value="">Seleccione una opción por favor</option>
+                `;
+            }
+            });
+        } else if (facultad.value === "Arquitectura") {
+            asignatura.innerHTML = `
+            <option value="">Seleccione una opción por favor</option>
+            <option value="Analisis y proyectos">Analisis y proyectos</option>
+            <option value="Graficadores digitales">Graficadores digitales</option>
+            `;
+            asignatura.addEventListener("change", function() {
+            if (asignatura.value === "Analisis y proyectos") {
+                profesor.innerHTML = `
+                <option value="">Seleccione una opción por favor</option>
+                <option value="Profesor7">Profesor7</option>
+                <option value="Profesor8">Profesor8</option>
+                `;
+            } else if (asignatura.value === "Graficadores digitales") {
+                profesor.innerHTML = `
+                <option value="">Seleccione una opción por favor</option>
+                <option value="Profesor9">Profesor9</option>
+                <option value="Profesor10">Profesor10</option>
+                `;
+            } else {
+                profesor.innerHTML = `
+                <option value="">Seleccione una opción por favor</option>
+                `;
+            }
+            });
+        } else if(facultad.value === "Economia"){
+            asignatura.innerHTML = `
+            <option value="">Seleccione una opción por favor</option>
+            <option value="Macroeconomia">Macroeconomia</option>
+            <option value="Comercio Exterior">Comercio Exterior</option>
+            `;
+            asignatura.addEventListener("change", function() {
+            if (asignatura.value === "Macroeconomia") {
+                profesor.innerHTML = `
+                <option value="">Seleccione una opción por favor</option>
+                <option value="Profesor11">Profesor11</option>
+                <option value="Profesor12">Profesor12</option>
+                `;
+            } else if (asignatura.value === "Comercio Exterior") {
+                profesor.innerHTML = `
+                <option value="">Seleccione una opción por favor</option>
+                <option value="Profesor13">Profesor13</option>
+                <option value="Profesor14">Profesor14</option>
+                `;
+            } else {
+                profesor.innerHTML = `
+                <option value="">Seleccione una opción por favor</option>
+                `;
+            }
+            });
+        } else {
+            asignatura.innerHTML = `
+            <option value="">Seleccione una opción por favor</option>
+            `;
+        }
+        });
+        // Obtener los elementos HTML de los menús desplegables
+        const facultadSelect = document.getElementById('facultad');
+        const asignaturaSelect = document.getElementById('asignatura');
+        const profesorSelect = document.getElementById('profesor');
+
+        // Añadir un evento de cambio a cada menú desplegable
+        facultadSelect.addEventListener('change', filtrarTabla);
+        asignaturaSelect.addEventListener('change', filtrarTabla);
+        profesorSelect.addEventListener('change', filtrarTabla);
+
+        function filtrarTabla() {
+        // Obtener los valores seleccionados en los menús desplegables
+        const facultad = facultadSelect.value;
+        const asignatura = asignaturaSelect.value;
+        const profesor = profesorSelect.value;
+
+        // Obtener todas las filas de la tabla excepto la fila de encabezado
+        const filas = document.querySelectorAll('#tabla-asistencia tr:not(:first-child)');
+
+        // Recorrer las filas y mostrar o ocultar según los criterios de selección
+        filas.forEach(fila => {
+            const facultadFila = fila.querySelector('.facultad').textContent;
+            const asignaturaFila = fila.querySelector('.asignatura').textContent;
+            const profesorFila = fila.querySelector('.profesor').textContent;
+            const coincideFacultad = facultad === '' || facultadFila === facultad;
+            const coincideAsignatura = asignatura === '' || asignaturaFila === asignatura;
+            const coincideProfesor = profesor === '' || profesorFila === profesor;
+            if (coincideFacultad && coincideAsignatura && coincideProfesor) {
+            fila.style.display = '';
+            } else {
+            fila.style.display = 'none';
+            }
+        });
+        }
+        function mensaje(){
+            alert("Asistencia Registrada");
+            location.reload();
+        }
+    </script>
+</body>
+</html>

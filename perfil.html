@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Perfil</title>
+</head>
+<body>
+    <div class="nav-bar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="acercade.html">Acerca de</a></li>
+                <li>
+                    <a href="#" id="btn-opciones" onclick="mostrarOpciones()">Opciones ▼</a>
+                    <div class="opciones">
+                        <ul>
+                            <fieldset id="opcionesfieldset">
+                                <li><a href="confp.html">Editar perfil</a></li>
+                                <li><a href="ayuda.html">Ayuda</a></li>
+                                <li><a href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
+                            </fieldset>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="universidad">
+        <fieldset id="ufieldset">
+            <img src="resources/logo.png" alt="logo-uleam">
+        </fieldset>
+    </div>
+    <div class="Perfil"> <!-- Datos de perfil -->
+        <fieldset>
+            <img src="resources/user.png" alt="usuario por defecto" id="imagenperfil">
+            <div class="izqimg">
+                <p><b>Nombre: </b>Administrador</p>
+                <p><b>Correo: </b>admin@uleam.com </p>
+                <p><b>Telefono: </b> 0999999</p>
+                <p><b>Edad: </b>23 años</p>
+            </div>
+            <div class="izqimg2">
+                <p><b>Ciudad: </b>No proporcianada</p>
+                <p><b>Pais: </b>Ecuador </p>
+                <p><b>Cargo: </b> No proporcionado</p>
+            </div>
+            <p id="fotodeperfil">Foto de perfil</p>
+            
+        </fieldset>
+    </div>
+    <script type="text/javascript">
+
+        if (!localStorage.getItem("sesionIniciada") || localStorage.getItem("sesionIniciada") !== "true") {
+        // Si el usuario no ha iniciado sesión correctamente, redirige a "login.html"
+        window.location.href = "login.html";
+        }
+
+        function cerrarSesion() {
+            // Elimina el item "sesionIniciada" del LocalStorage
+            localStorage.removeItem("sesionIniciada");
+            // Redirecciona a la página de inicio de sesión
+            window.location.href = "login.html";
+        }
+        function mostrarOpciones() {
+        var opciones = document.querySelector('.opciones');
+        opciones.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
